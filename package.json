@@ -1,7 +1,7 @@
 {
-  "name": "hello-world",
+  "name": "troops_server",
   "version": "1.0.0",
-  "description": "Hello world with express and node.js",
+  "description": "Final Project for Geneva Lai CS290",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,3 +16,4 @@
     "mysql": "^2.8.0"
   }
 }
+
