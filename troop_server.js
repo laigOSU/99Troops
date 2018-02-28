@@ -36,7 +36,7 @@ app.get('/how-donate',function(req,res){
     res.render('how-donate');
   });
 
-/* CONTACT US PAGE */
+/* CONTACT PAGE */
 app.get('/contact',function(req,res){
     res.render('contact');
   });
