@@ -19,6 +19,7 @@ app.get('/',function(req,res){
 
 /* ABOUT PAGE */
 app.get('/about', function(req,res){
+    console.log("SOMEONE MADE A REQUEST TO /ABOUT");
     res.render('about');
 });
 
@@ -27,9 +28,14 @@ app.get('/vets',function(req,res){
     res.render('vets');
   });
 
+/* DOWNLOAD FILE VETS APPLICATION */
+app.get('/download', function(req,res){
+  res.download(__dirname + '/downloads/99TroopsApplication.txt');
+});
+
 /* HOW IT WORKS PAGE */
-app.get('/how',function(req,res){
-    res.render('how');
+app.get('/how-donate',function(req,res){
+    res.render('how-donate');
   });
 
 /* CONTACT US PAGE */
