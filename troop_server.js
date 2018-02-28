@@ -7,10 +7,6 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 47108);
 
-/* LECTURE SAMPLE
-app.get('/other-page',function(req,res){
-  res.render('other-page');
-}); */
 
 /* ACCESS TO STATIC FILES */
 app.use(express.static('public'));
@@ -22,7 +18,6 @@ app.get('/',function(req,res){
 
 /* ABOUT PAGE */
 app.get('/about', function(req,res){
-    console.log("SOMEONE MADE A REQUEST TO /ABOUT");
     res.render('about');
 });
 
@@ -45,16 +40,6 @@ app.get('/how-donate',function(req,res){
 app.get('/contact',function(req,res){
     res.render('contact');
   });
-
-function genContext(){
-  var stuffToDisplay = {};
-  stuffToDisplay.time = (new Date(Date.now())).toLocaleTimeString('en-US');
-  return stuffToDisplay;
-}
-
-app.get('/time',function(req,res){
-  res.render('time', genContext());
-});
 
 app.use(function(req,res){
   res.status(404);
