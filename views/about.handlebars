@@ -1,87 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <!-- <title>99 For The Troops</title> -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/troop_styles.css">
-</head>
-<body>
 
-<!--NAV BAR--> 
+    <!--For Doc Download-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+    <script src="/socket.io/socket.io.js"></script>
+    
+  </head>
+
+  <body>
+    <!--NAVBAR-->
     <!--Navbars need two classes-->
     <!--Initialize the nav bar-->
-<nav class="navbar navbar-inverse">
-    <!--Put everything in the navbar inside a container (for padding)-->
-    <div class="container-fluid">
-    <!--Fill nav bar with content-->
-    <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-main" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-            <a class="navbar-brand" href="/">99 FOR THE TROOPS</a>
-    </div>
-
-
-        <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-navbar-collapse-main">
-            <li class="active"><a href="/about">About</a></li>
-            <li><a href="/vets">Disabled Vets</a></li>
-            <li><a href="/how-donate">How It Works</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-
-    </div>
-</nav>
-
-
-<!--IMAGES (STILL INSIDE JUMBOTRON'S CONTAINER)-->
-<div class="container">
-<div class="row">
-    <!--"ROW 1"-->
-    <div class="col-sm-4 col-xs-12">
-        <div class="thumbnail">
-            <img src="https://source.unsplash.com/wEow4WdiAbg">
-        </div>  
-    </div>
-    <div class="col-sm-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="https://source.unsplash.com/ffypGIy5rOs">
-        </div>        
-    </div>
-    <div class="col-sm-4 col-xs-6">
-        <div class="thumbnail">
-            <img src="https://source.unsplash.com/fUWCe_pPPY0">
-        </div>
-    </div>
-</div>
-</div>
-
-<!--BACKGROUND INTRO-->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="about-content">
-                <h2>99 For The Troops</h2>
-                <p>When you make a donation to most non-profit organizations, do you know where your dollar is going?</p>
-                <p>Many non-profits take out portions of your donations to cover vague or undisclosed "costs."</p>
-                <p>The veteran receives less aid than expected. This hurts both you and the veteran you are trying to support.</p>
-                <p>That's how 99 For The Troops started. We as a society need more transparency from corporations.</p>
-                <p>99% of your contributions go directly to the veterans. The remaining 1% is used to cover the costs of 
-                    maintaining this site.</p> 
-                    <p>The counter shows how much money has been donated, and how much has been sent directly to the troops.</p>
-                    <p>In order for vets to receive aid, they must agree to send us a photo of themselves holding their check.</p>
-                    <p>We'll post these pictures.  Take a look at the checks, the counter, and you do the math. </p>
-                        <p>99% just for the troops.</p>
-                <hr>
+    <nav class="navbar navbar-inverse">
+            <!--Put everything in the navbar inside a container (for padding)-->
+            <div class="container-fluid">
+            <!--Fill nav bar with content-->
+            <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-main" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                    <a class="navbar-brand" href="/">99 FOR THE TROOPS</a>
             </div>
+    
+    
+                <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-navbar-collapse-main">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/vets">Disabled Vets</a></li>
+                    <li><a href="/how-donate">How It Works</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+    
+            </div>
+           </nav>
+
+    <!--JUMBOTRON-->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Veterans: </h1>
+            <h3>Apply for Aid Here</h3>
+            <div class="col-sm-12">
+                <button id="btn_download"class="btn btn-primary btn btn-lg">APPLY HERE</button>
+                <script type="text/javascript">$("#btn_download").click(function(){window.open('/download');})</script>
+            </div>
+            <br/>
         </div>
-    </div>
-</div>
     
 
+    <!--IMAGES (STILL INSIDE JUMBOTRON'S CONTAINER)-->
+        <div class="row">
+
+            <!--"ROW 1"-->
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/wEow4WdiAbg">
+                </div>  
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/ffypGIy5rOs">
+                </div>        
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/YOdDoQepmPE">
+                </div>
+            </div>
+        <!--CLOSE CLASS ROW-->    
+        </div>
+    </div>
 
 <!--CITE COPYRIGHT-->
 <footer class="footer">
@@ -93,11 +89,8 @@
 </footer>
 
 <!--Put in this order: jquery first because bootstrap relies on jquery-->          
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous">
-</script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
 </html>
